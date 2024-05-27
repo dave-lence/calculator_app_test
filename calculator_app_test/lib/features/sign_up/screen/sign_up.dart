@@ -1,5 +1,6 @@
 import 'package:calculator_app_test/common/widget/custom_button.dart';
 import 'package:calculator_app_test/common/widget/custom_text-field.dart';
+import 'package:calculator_app_test/features/sign_up/screen/verify_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -171,7 +172,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             SizedBox(
                 width: size.width * 0.93,
-                child: CustomButton(text: 'Sign Up now', onPressed: () {})),
+                child: CustomButton(text: 'Sign Up now', onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context) => const VerificationScreen(),));
+                })),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20.0),
               child: const Row(

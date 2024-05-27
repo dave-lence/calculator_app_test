@@ -1,6 +1,7 @@
 import 'package:calculator_app_test/features/login/screen/sigin_in_screen.dart';
 import 'package:calculator_app_test/features/sign_up/screen/sign_up.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SignUpLoginScreen extends StatefulWidget {
   const SignUpLoginScreen({super.key});
@@ -17,12 +18,16 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen>
     super.initState();
     tabController = TabController(length: 2, vsync: this);
     tabController.addListener(() {
-      setState(() {}); 
+      setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      statusBarColor: Colors.green.shade700,
+    ));
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -43,7 +48,9 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                   tabController.index == 0 ? 'assets/in_light (1).png': 'assets/Group 8655.png',
+                    tabController.index == 0
+                        ? 'assets/in_light (1).png'
+                        : 'assets/Group 8655.png',
                     width: 20,
                     height: 20,
                   ),
@@ -56,7 +63,9 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                   tabController.index == 1 ?'assets/Sign_in_circle_light_2.png' : 'assets/Sign_in_circle_light.png',
+                    tabController.index == 1
+                        ? 'assets/Sign_in_circle_light_2.png'
+                        : 'assets/Sign_in_circle_light.png',
                     width: 20,
                     height: 20,
                   ),

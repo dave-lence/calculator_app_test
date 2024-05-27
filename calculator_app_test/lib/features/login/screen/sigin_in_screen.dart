@@ -1,5 +1,6 @@
 import 'package:calculator_app_test/common/widget/custom_button.dart';
 import 'package:calculator_app_test/common/widget/custom_text-field.dart';
+import 'package:calculator_app_test/features/login/screen/login_success.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -124,7 +125,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             SizedBox(
                 width: size.width * 0.93,
-                child: CustomButton(text: 'Sign In now', onPressed: () {})),
+                child: CustomButton(text: 'Sign In now', onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginSuccess()));
+                })),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20.0),
               child: const Row(
@@ -190,11 +196,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ],
             ),
-
             SizedBox(
               height: size.height * 0.09,
             ),
-             TextButton( onPressed: (){}, child: const Text('Continue as guest', style: TextStyle(color: Colors.grey, decoration: TextDecoration.underline))),
+            TextButton(
+                onPressed: () {
+                  
+                },
+                child: const Text('Continue as guest',
+                    style: TextStyle(
+                        color: Colors.grey,
+                        decoration: TextDecoration.underline))),
           ],
         ),
       ),
